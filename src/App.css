@@ -1,0 +1,27 @@
+#root{
+    display: flex;
+    justify-content: center;
+    
+}
+
+/* Para navegadores basados en Webkit (Chrome, Safari, etc.) */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Para Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.contenedor{
+    padding: 20px;
+    border: 1px solid #3b3232;
+    border-radius: 5px;
+    background-color: burlywood;
+}
+#boleta{
+    padding: 20px;
+}
