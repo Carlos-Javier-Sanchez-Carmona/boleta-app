@@ -38,9 +38,10 @@ function App() {
   });
 
   const calcularPromedio1 = () => {
-    let suma = calificacion1_1 + calificacion1_2 + calificacion1_3;
+    let suma = Number(calificacion1_1 + calificacion1_2 + calificacion1_3);
     let promedio = suma / 3;
     setPromedio1(promedio);
+    console.log(promedio1);  
   };
   const calcularPromedio2 = () => {
     let suma = calificacion2_1 + calificacion2_2 + calificacion2_3;
@@ -77,7 +78,9 @@ function App() {
             <td><input type="number" id="calificacion1_1" min={0} max={10} maxLength={2} value={calificacion1_1} onChange={e => setCalificacion1_1(e.target.value)}/></td>
             <td><input type="number" id="calificacion1_2" min={0} max={10} maxLength={2} value={calificacion1_2} onChange={e => setCalificacion1_2(e.target.value)}/></td>
             <td><input type="number" id="calificacion1_3" min={0} max={10} maxLength={2} value={calificacion1_3} onChange={e => setCalificacion1_3(e.target.value)}/></td>
-            <td id="promedio1"></td>
+            {/*<td id="promedio1" value={promedio1} calcularPromedio1={e => setPromedio1(e.target.value)}></td>*/}
+            <td id="promedio1" onClick={e => calcularPromedio1(e, setPromedio1)}>{promedio1}</td>
+
           </tr>
           
           <tr>
