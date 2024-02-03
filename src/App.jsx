@@ -22,6 +22,18 @@ function App() {
   //funcion para detectar el cambio de valor de cada input
  
   useEffect(() => {
+    let suma1 = calificacion1_1 + calificacion1_2 + calificacion1_3;
+    let suma2 = calificacion2_1 + calificacion2_2 + calificacion2_3;
+    let suma3 = calificacion3_1 + calificacion3_2 + calificacion3_3;
+    let promedio1 = suma1 / 3;
+    let promedio2 = suma2 / 3;
+    let promedio3 = suma3 / 3;
+    let promedioGeneral = (promedio1 + promedio2 + promedio3) / 3;
+    setPromedio1(promedio1);
+    setPromedio2(promedio2);
+    setPromedio3(promedio3);
+    setPromedioGeneral(promedioGeneral);
+
     console.log('calificacion1_1', calificacion1_1);
     console.log('calificacion1_2', calificacion1_2);
     console.log('calificacion1_3', calificacion1_3);
@@ -38,75 +50,76 @@ function App() {
   });
 
   const calcularPromedio1 = () => {
-    let suma = Number(calificacion1_1 + calificacion1_2 + calificacion1_3);
-    let promedio = suma / 3;
-    setPromedio1(promedio);
+    let suma1 = Number(calificacion1_1 + calificacion1_2 + calificacion1_3);
+    let promedio1 = suma1 / 3;
+    setPromedio1(promedio1);
     console.log(promedio1);  
   };
   const calcularPromedio2 = () => {
-    let suma = calificacion2_1 + calificacion2_2 + calificacion2_3;
-    let promedio = suma / 3;
-    setPromedio2(promedio);
+    let suma2 = calificacion2_1 + calificacion2_2 + calificacion2_3;
+    let promedio2 = suma2 / 3;
+    setPromedio2(promedio2);
   };
   const calcularPromedio3 = () => {
-    let suma = calificacion3_1 + calificacion3_2 + calificacion3_3;
-    let promedio = suma / 3;
-    setPromedio3(promedio);
+    let suma3 = calificacion3_1 + calificacion3_2 + calificacion3_3;
+    let promedio3 = suma3 / 3;
+    setPromedio3(promedio3);
   };
   const calcularPromedioGeneral = () => {
     let suma = promedio1 + promedio2 + promedio3;
-    let promedio = suma / 3;
-    setPromedioGeneral(promedio);
+    let promedio4 = suma / 3;
+    setPromedioGeneral(promedio4);
   };
 
-  return (
-    
+return (
+  
 
-    <div className='contenedor'>
-      <form id="boleta">
-        <table>
-            <legend className='title'>Boleta de calificaciones</legend>
-          <tr>
-            <th>Materia</th>
-            <th>Calificación 1</th>
-            <th>Calificación 2</th>
-            <th>Calificación 3</th>
-            <th>Promedio</th>
-          </tr>
-          <tr>
-            <th>Materia 1</th>
-            <td><input type="number" id="calificacion1_1" min={0} max={10} maxLength={2} value={calificacion1_1} onChange={e => setCalificacion1_1(e.target.value)}/></td>
-            <td><input type="number" id="calificacion1_2" min={0} max={10} maxLength={2} value={calificacion1_2} onChange={e => setCalificacion1_2(e.target.value)}/></td>
-            <td><input type="number" id="calificacion1_3" min={0} max={10} maxLength={2} value={calificacion1_3} onChange={e => setCalificacion1_3(e.target.value)}/></td>
-            {/*<td id="promedio1" value={promedio1} calcularPromedio1={e => setPromedio1(e.target.value)}></td>*/}
-            <td id="promedio1" onClick={e => calcularPromedio1(e, setPromedio1)}>{promedio1}</td>
-
-          </tr>
-          
-          <tr>
-            <th>Materia 2</th>
-            <td><input type="number" id="calificacion2_1" min={0} max={10} maxLength={2} value={calificacion2_1} onChange={e => setCalificacion2_1(e.target.value)}/></td>
-            <td><input type="number" id="calificacion2_2" min={0} max={10} maxLength={2} value={calificacion2_2} onChange={e => setCalificacion2_2(e.target.value)}/></td>
-            <td><input type="number" id="calificacion2_3" min={0} max={10} maxLength={2} value={calificacion2_3} onChange={e => setCalificacion2_3(e.target.value)}/></td>
-            <td id="promedio2"></td>
-          </tr>
-
-          <tr>
-            <th>Materia 3</th>
-            <td><input type="number" id="calificacion3_1" min={0} max={10} maxLength={2} value={calificacion3_1} onChange={e => setCalificacion3_1(e.target.value)}/></td>
-            <td><input type="number" id="calificacion3_2" min={0} max={10} maxLength={2} value={calificacion3_2} onChange={e => setCalificacion3_2(e.target.value)}/></td>
-            <td><input type="number" id="calificacion3_3" min={0} max={10} maxLength={2} value={calificacion3_3} onChange={e => setCalificacion3_3(e.target.value)}/></td>
-            <td id="promedio3"></td>
-          </tr>
-          
-          <tr>
-            <th>Promedio general</th>
-            <td id="promedio_gral"></td>
+  <div className='contenedor'>
+    <form id="boleta">
+      <table>
+          <legend className='title'>Boleta de calificaciones</legend>
+        <tr>
+          <th>Materia</th>
+          <th>Calificación 1</th>
+          <th>Calificación 2</th>
+          <th>Calificación 3</th>
+          <th>Promedio</th>
         </tr>
-        </table>
-    </form>
-    </div>
-  )
+        <tr>
+          <th>Materia 1</th>
+          <td><input type="number" id="calificacion1_1" min={0} max={10} maxLength={2} value={calificacion1_1} onChange={e => setCalificacion1_1(e.target.value)}/></td>
+          <td><input type="number" id="calificacion1_2" min={0} max={10} maxLength={2} value={calificacion1_2} onChange={e => setCalificacion1_2(e.target.value)}/></td>
+          <td><input type="number" id="calificacion1_3" min={0} max={10} maxLength={2} value={calificacion1_3} onChange={e => setCalificacion1_3(e.target.value)}/></td>
+          {/*<td id="promedio1" value={promedio1} calcularPromedio1={e => setPromedio1(e.target.value)}></td>*/}
+          <td id="promedio1" onClick={calcularPromedio1}>{promedio1}</td>
+
+        </tr>
+        
+        <tr>
+          <th>Materia 2</th>
+          <td><input type="number" id="calificacion2_1" min={0} max={10} maxLength={2} value={calificacion2_1} onChange={e => setCalificacion2_1(e.target.value)}/></td>
+          <td><input type="number" id="calificacion2_2" min={0} max={10} maxLength={2} value={calificacion2_2} onChange={e => setCalificacion2_2(e.target.value)}/></td>
+          <td><input type="number" id="calificacion2_3" min={0} max={10} maxLength={2} value={calificacion2_3} onChange={e => setCalificacion2_3(e.target.value)}/></td>
+          <td id="promedio2">{promedio2}</td>
+        </tr>
+
+        <tr>
+          <th>Materia 3</th>
+          <td><input type="number" id="calificacion3_1" min={0} max={10} maxLength={2} value={calificacion3_1} onChange={e => setCalificacion3_1(e.target.value)}/></td>
+          <td><input type="number" id="calificacion3_2" min={0} max={10} maxLength={2} value={calificacion3_2} onChange={e => setCalificacion3_2(e.target.value)}/></td>
+          <td><input type="number" id="calificacion3_3" min={0} max={10} maxLength={2} value={calificacion3_3} onChange={e => setCalificacion3_3(e.target.value)}/></td>
+          <td id="promedio3">{promedio3}</td>
+        </tr>
+        
+        <tr>
+          <th>Promedio general</th>
+          <td id="promedioGral">{promedioGeneral}</td>
+      </tr>
+      </table>
+  </form>
+  </div>
+)
+
 }
 
 export default App
