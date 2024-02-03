@@ -37,12 +37,15 @@ function App() {
     console.log('calificacion1_1', calificacion1_1);
     console.log('calificacion1_2', calificacion1_2);
     console.log('calificacion1_3', calificacion1_3);
+    console.log('suma1', suma1);
     console.log('calificacion2_1', calificacion2_1);
     console.log('calificacion2_2', calificacion2_2);
     console.log('calificacion2_3', calificacion2_3);
+    console.log('suma2', suma2);
     console.log('calificacion3_1', calificacion3_1);
     console.log('calificacion3_2', calificacion3_2);
     console.log('calificacion3_3', calificacion3_3);
+    console.log('suma3', suma3);
     console.log('promedio1', promedio1);
     console.log('promedio2', promedio2);
     console.log('promedio3', promedio3);
@@ -100,7 +103,7 @@ return (
           <td><input type="number" id="calificacion2_1" min={0} max={10} maxLength={2} value={calificacion2_1} onChange={e => setCalificacion2_1(e.target.value)}/></td>
           <td><input type="number" id="calificacion2_2" min={0} max={10} maxLength={2} value={calificacion2_2} onChange={e => setCalificacion2_2(e.target.value)}/></td>
           <td><input type="number" id="calificacion2_3" min={0} max={10} maxLength={2} value={calificacion2_3} onChange={e => setCalificacion2_3(e.target.value)}/></td>
-          <td id="promedio2">{promedio2}</td>
+          <td id="promedio2" onClick={calcularPromedio2}>{promedio2}</td>
         </tr>
 
         <tr>
@@ -108,12 +111,12 @@ return (
           <td><input type="number" id="calificacion3_1" min={0} max={10} maxLength={2} value={calificacion3_1} onChange={e => setCalificacion3_1(e.target.value)}/></td>
           <td><input type="number" id="calificacion3_2" min={0} max={10} maxLength={2} value={calificacion3_2} onChange={e => setCalificacion3_2(e.target.value)}/></td>
           <td><input type="number" id="calificacion3_3" min={0} max={10} maxLength={2} value={calificacion3_3} onChange={e => setCalificacion3_3(e.target.value)}/></td>
-          <td id="promedio3">{promedio3}</td>
+          <td id="promedio3" onClick={calcularPromedio3}>{promedio3}</td>
         </tr>
         
         <tr>
           <th>Promedio general</th>
-          <td id="promedioGral">{promedioGeneral}</td>
+          <td id="promedioGral" onClick={calcularPromedioGeneral}>{promedioGeneral}</td>
       </tr>
       </table>
   </form>
