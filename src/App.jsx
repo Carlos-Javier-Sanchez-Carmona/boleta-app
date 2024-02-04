@@ -22,13 +22,13 @@ function App() {
   //funcion para detectar el cambio de valor de cada input
  
   useEffect(() => {
-    let suma1 = calificacion1_1 + calificacion1_2 + calificacion1_3;
-    let suma2 = calificacion2_1 + calificacion2_2 + calificacion2_3;
-    let suma3 = calificacion3_1 + calificacion3_2 + calificacion3_3;
-    let promedio1 = suma1 / 3;
-    let promedio2 = suma2 / 3;
-    let promedio3 = suma3 / 3;
-    let promedioGeneral = (promedio1 + promedio2 + promedio3) / 3;
+    let suma1 = (Number(calificacion1_1) + Number(calificacion1_2) + Number(calificacion1_3));
+    let suma2 = (Number(calificacion2_1) + Number(calificacion2_2) + Number(calificacion2_3));
+    let suma3 = (Number(calificacion3_1) + Number(calificacion3_2) + Number(calificacion3_3));
+    let promedio1 = (Number(suma1) / 3).toFixed(2);
+    let promedio2 = (Number(suma2) / 3).toFixed(2);
+    let promedio3 = (Number(suma3) / 3).toFixed(2);
+    let promedioGeneral = (Number(promedio1) + Number(promedio2) + Number(promedio3) / 3).toFixed(2);
     setPromedio1(promedio1);
     setPromedio2(promedio2);
     setPromedio3(promedio3);
@@ -53,18 +53,18 @@ function App() {
   });
 
   const calcularPromedio1 = () => {
-    let suma1 = Number(calificacion1_1 + calificacion1_2 + calificacion1_3);
+    let suma1 = Number(calificacion1_1) + Number(calificacion1_2) + Number(calificacion1_3);
     let promedio1 = suma1 / 3;
     setPromedio1(promedio1);
     console.log(promedio1);  
   };
   const calcularPromedio2 = () => {
-    let suma2 = calificacion2_1 + calificacion2_2 + calificacion2_3;
+    let suma2 = parseFloat(calificacion2_1 + calificacion2_2 + calificacion2_3);
     let promedio2 = suma2 / 3;
     setPromedio2(promedio2);
   };
   const calcularPromedio3 = () => {
-    let suma3 = calificacion3_1 + calificacion3_2 + calificacion3_3;
+    let suma3 = parseFloat(calificacion3_1 + calificacion3_2 + calificacion3_3);
     let promedio3 = suma3 / 3;
     setPromedio3(promedio3);
   };
